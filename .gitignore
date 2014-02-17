@@ -1,0 +1,26 @@
+# scala
+*.class
+*.log
+
+# sbt specific
+project/target/
+project/project/
+target/
+
+# idea
+*.iml
+*.ipr
+*.iws
+.idea/
+.idea_modules/
+
+#OS X
+
+*.DS_Store
+
+# sass
+.sass-cache/
+
+# vagrant
+cache
+.vagrant
