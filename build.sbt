@@ -1,13 +1,11 @@
 name := "riemann-runner"
 
 resolvers ++= Seq(
-  "clojars" at "https://clojars.org/repo/",
-  "clojure-utils" at "https://github.com/mikera/clojure-utils/releases"
+  "clojars" at "https://clojars.org/repo/"
 )
 
 libraryDependencies ++= Seq(
   "riemann"              % "riemann"               % "0.2.4",
-  "net.mikera"           % "clojure-utils"         % "0.4.0",
   "com.aphyr"            % "riemann-java-client"   % "0.2.8" excludeAll (
-  ExclusionRule(organization = "com.yammer.metrics"))
+    ExclusionRule(organization = "com.yammer.metrics"))
 )
