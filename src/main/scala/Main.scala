@@ -1,5 +1,6 @@
 import com.aphyr.riemann.client.RiemannClient
 import java.util.concurrent.Executors
+import mikera.cljutils.Clojure
 import scala.concurrent.{ExecutionContext, Future}
 
 object Main extends App {
@@ -7,7 +8,8 @@ object Main extends App {
   private[this] val blockingIOEC = ExecutionContext.fromExecutorService(blockingIOThreadPool)
 
   Future {
-    riemann.bin_runner.main(Array("./etc/riemann.config"))
+    Clojure.require("riemann.bin")
+    Clojure.eval("""(riemann.bin/-main "./etc/riemann.config")""")
   }(blockingIOEC)
 
   Thread.sleep(5000)
