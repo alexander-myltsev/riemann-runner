@@ -6,5 +6,5 @@ Project demonstrates how to run [riemann server](http://riemann.io/) from Java/S
 Launch it with [sbt](http://www.scala-sbt.org/)
 
 ```
-sbt run
+sbt 'multi-jvm:run Runner'
 ```
