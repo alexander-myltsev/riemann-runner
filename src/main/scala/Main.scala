@@ -19,14 +19,5 @@ object Main extends App {
 
   println(result)
 
-  Clojure.eval(
-    """ (try
-      |   (riemann.time/reset-tasks!)
-      |   (riemann.config/clear!)
-      |   (riemann.pubsub/sweep! (:pubsub @riemann.config/core))
-      |   (riemann.config/stop!)
-      |   nil
-      |   (catch Exception e
-      |     e))
-    """.stripMargin)
+  Clojure.eval("""(riemann.core/stop! @riemann.config/core)""")
 }
